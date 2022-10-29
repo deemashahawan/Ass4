@@ -7,9 +7,15 @@ public class Color {
     private static Color instance=null;
     public static Color getInstance(int r,int g,int b){
         Boolean t=ColorStore.colors.containsKey(r+","+g+","+b);
-      if(t.equals(false)) {
-          instance = new Color(r, g, b);
-      }
+        if(instance==null) {
+            if (t.equals(false)) {
+                synchronized (Color.class) {
+                    if (instance == null) {
+                        instance = new Color(r, g, b);
+                    }
+                }
+            }
+        }
         return instance;
     }
     private Color(int red, int green, int blue) {

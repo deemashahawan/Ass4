@@ -16,6 +16,11 @@ public class App {
         colorStore.printColor(6,88,233);
         colorStore.printColor(255,0,0);
         colorStore.printColor(1,44,100);
+        colorStore.printColor(255,255,255);
+        colorStore.printColor(6,99,1);
+        colorStore.addColor(55,30,200);
+        colorStore.printColor(55,30,200);
+        colorStore.addColor(0,0,0);
 
     }
 }
